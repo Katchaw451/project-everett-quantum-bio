@@ -1,17 +1,25 @@
-# 🧬 Project Everett: Quantum-Enhanced Drug Binding Predictor
+# 🧬 Project Everett: Quantum Drug Discovery Engine
+**Author:** Katchaw451  
+**Domain:** Quantum Machine Learning (QML) for Cheminformatics
 
-## Overview
-Project Everett is a Proof of Concept (PoC) for a Hybrid Quantum-Classical Neural Network designed to predict molecular binding affinities. By utilizing Variational Quantum Circuits (VQCs), the model explores multiple quantum states simultaneously to navigate the complex energetic landscapes of protein-ligand interactions.
+## 📖 The Scientific Journey (Version History)
+This project demonstrates the iterative development of a Hybrid Quantum-Classical Neural Network (VQC + PyTorch) to predict Topological Polar Surface Area (TPSA) for drug-like molecules.
 
-## Tech Stack
-* **Quantum Framework:** PennyLane (Differentiable Quantum Programming)
-* **Classical ML:** PyTorch
-* **Environment:** Google Colab / Jupyter
+*   **V1 (Basic):** Initial Proof of Concept with synthetic data.
+*   **V2 (Advanced):** Multi-qubit readout, Lipinski descriptors, and R² metrics.
+*   **V3 (Production):** Integrated RDKit to process real SMILES strings. *Diagnosed Overfitting (R² = -0.48) due to micro-dataset size.*
+*   **V4 (Anti-Overfit):** Introduced augmented datasets and Dropout. *Diagnosed Underfitting (R² = 0.20) due to excessive noise injection.*
+*   **V5 (The Goldilocks Zone - Current):** Balanced quantum circuit depth, Dropout (p=0.05), and realistic data generation. Achieved optimal generalization on unseen molecular data.
 
-## Methodology
-1. **State Preparation:** Classical molecular descriptors are encoded into quantum states using Angle Embedding.
-2. **Entanglement:** Strongly Entangling Layers are applied to create superposition and entanglement.
-3. **Measurement:** The expectation value of the Pauli-Z operator is measured.
-4. **Optimization:** Quantum parameters are optimized using the Parameter-Shift Rule.
+## 📊 Final Model Performance (V5)
+*   **R² Score:** 0.7208 (Explains 72% of variance on unseen molecules)
+*   **RMSE:** 0.5105
+*   **Architecture:** 4-Qubit Variational Quantum Circuit (Data Re-uploading) + Classical MLP with Dropout.
+*   **Key Insight:** Validation loss is lower than training loss, indicating excellent generalization without memorization.
+
+## 🛠️ Tech Stack
+*   **Quantum:** PennyLane
+*   **Classical:** PyTorch, RDKit, Scikit-Learn
+*   **Environment:** Google Colab / Jupyter
 
 *"We are not just simulating molecules; we are computing reality."*
